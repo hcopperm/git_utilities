@@ -12,6 +12,7 @@ Usage
 -----
 
 ```sh
+# you can pass two arguments
 ./make_pr ${feature_branch} ${master_branch}
 # if you just pass the feature branch name
 # it will make pull request against master_newui

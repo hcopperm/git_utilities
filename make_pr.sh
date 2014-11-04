@@ -38,7 +38,7 @@ echo Making PR for ${feature} branch against ${master} branch
 read -p "Press Enter to continue, Ctrl-C to quit"
 
 TEMPLATE="https://gist.githubusercontent.com/hcopperm/e2eba762b43132852ecc/raw/38523eb60a84764dd955f51c9ae5d599458d594b/gistfile1.txt"
-FILENAME=`mktemp pr_templateXXX`
+FILENAME=`mktemp ${feature}XXX`
 curl $TEMPLATE > $FILENAME
 vi --nofork $FILENAME
 hub pull-request -h onelogin:${feature} -b onelogin:${master} --file $FILENAME

@@ -13,6 +13,8 @@ You might also have to do this:
 brew upgrade hub
 ```
 
+If you add it to your path then you can run `make_pr.sh` from any directory
+
 Usage
 -----
 The script `make_pr.sh` opens a pull request template in `vi`, and when that file is edited and closed, it calls `hub pull-request`, passing the template you just edited  to the `--file` flag. 

@@ -37,9 +37,10 @@ fi
 echo Making PR for ${feature} branch against ${master} branch
 read -p "Press Enter to continue, Ctrl-C to quit"
 
-TEMPLATE="https://gist.githubusercontent.com/hcopperm/e2eba762b43132852ecc/raw/38523eb60a84764dd955f51c9ae5d599458d594b/gistfile1.txt"
+TEMPLATE="https://gist.githubusercontent.com/hcopperm/e2eba762b43132852ecc/raw/6c984daab450c55268a698aa82bc8f70436f95aa/gistfile1.txt"
 FILENAME=`mktemp ${feature}XXX`
 curl $TEMPLATE > $FILENAME
+sed -i.bak "s/{TICKET}/${feature}/" $FILENAME
 vi --nofork $FILENAME
-hub pull-request -h onelogin:${feature} -b onelogin:${master} --file $FILENAME
+hub pull-request -h ${feature} -b ${master} --file $FILENAME
 rm $FILENAME

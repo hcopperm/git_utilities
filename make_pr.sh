@@ -42,6 +42,6 @@ FILENAME=`mktemp ${feature}XXX`
 curl $TEMPLATE > $FILENAME
 sed -i.bak "s/{TICKET}/${feature}/" $FILENAME
 vi --nofork $FILENAME
-hub pull-request -h onelogin:${feature} -b onelogin:${master} --file $FILENAME
+hub pull-request -h ${feature} -b ${master} --file $FILENAME
 rm $FILENAME
 rm "$FILENAME.bak"

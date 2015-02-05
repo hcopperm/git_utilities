@@ -37,7 +37,7 @@ fi
 echo Making PR for ${feature} branch against ${master} branch
 read -p "Press Enter to continue, Ctrl-C to quit"
 
-TEMPLATE="https://gist.githubusercontent.com/hcopperm/9670e6d85c2c781e2430/raw/2d6232cc7b63fdbdec2248b2db2352f0c6c3b97e/gistfile1.txt"
+TEMPLATE="https://gist.githubusercontent.com/hcopperm/9670e6d85c2c781e2430/raw/a52ef0979e5068a32eff942060b181efdbcc606a/gistfile1.txt"
 FILENAME=`mktemp ${feature}XXX`
 curl $TEMPLATE > $FILENAME
 sed -i.bak "s/{TICKET}/${feature}/" $FILENAME
